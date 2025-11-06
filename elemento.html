@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Describe the page purpose here" />
+    <title>Elemento — Project</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Minimal theme color for mobile -->
+    <meta name="theme-color" content="#0a74da" />
+</head>
+<body>
+    <!-- Accessibility: skip to content -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header role="banner" class="site-header">
+        <div class="container">
+            <a class="logo" href="/" aria-label="Homepage">Elemento</a>
+            <nav role="navigation" aria-label="Main navigation" class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#docs">Docs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" role="main" class="container">
+        <section id="home" class="hero" aria-labelledby="hero-heading">
+            <h1 id="hero-heading">Welcome to Elemento</h1>
+            <p class="lead">A brief one-line description of the project.</p>
+            <p>
+                <a class="btn-primary" href="#features">Get started</a>
+            </p>
+        </section>
+
+        <section id="features" aria-labelledby="features-heading">
+            <h2 id="features-heading">Key features</h2>
+            <ul class="features-list">
+                <li><strong>Semantic HTML</strong> — accessible structure and landmarks.</li>
+                <li><strong>Responsive</strong> — mobile-first layout.</li>
+                <li><strong>Extensible</strong> — ready for components and JS modules.</li>
+            </ul>
+        </section>
+
+        <article id="docs" aria-labelledby="docs-heading">
+            <h2 id="docs-heading">Example component</h2>
+            <section>
+                <h3>Card</h3>
+                <div class="card" role="group" aria-label="Example card">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-body">Short description about the card content.</p>
+                    <a class="card-cta" href="#contact">Learn more</a>
+                </div>
+            </section>
+        </article>
+
+        <aside aria-labelledby="aside-heading" class="sidebar">
+            <h2 id="aside-heading">Sidebar</h2>
+            <p>Supplementary information, links, or ads.</p>
+        </aside>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <form action="#" method="POST" class="contact-form" aria-label="Contact form">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Elemento. All rights reserved.</p>
+            <nav aria-label="Footer links">
+                <ul class="footer-links">
+                    <li><a href="/privacy">Privacy</a></li>
+                    <li><a href="/terms">Terms</a></li>
+                    <li><a href="/sitemap">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Simple client-side utilities
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Basic keyboard focus visual for skip-link
+        (function () {
+            var skip = document.querySelector('.skip-link');
+            skip.addEventListener('focus', function () {
+                this.style.left = '0';
+            });
+            skip.addEventListener('blur', function () {
+                this.style.left = '-999px';
+            });
+        })();
+    </script>
+</body>
+</html>
